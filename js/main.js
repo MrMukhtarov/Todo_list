@@ -14,7 +14,11 @@ function Add() {
       input.classList.add("is-invalid");
     } else {
       input.classList.remove("is-invalid");
-      TodoArr.push(input.value);
+      if (TodoArr.includes(input.value)) {
+        input.classList.add("is-invalid");
+      } else {
+        TodoArr.push(input.value);
+      }
       input.value = "";
       document.getElementById("remove-all").disabled = false;
     }
